@@ -19,7 +19,7 @@ void dfs(int row, int col, string path, bool up, bool down, bool left, bool righ
 	if( col == 0 && 0 < row && row < (N-1) && !grid[row-1][col] && !grid[row+1][col] ){ return; }
 	if( row == 0 && 0 < col && col < (N-1) && !grid[row][col-1] && !grid[row][col+1] ){ return; }
 
-	// If we reach any point in the middle of the grid where we cannot keep going forward but can turn to either we stop searching
+	// If we reach any point in the middle of the grid where we cannot keep going forward but can turn to either side we stop searching
 	if( 0 < col && col < (N-1) && 0 < row && row < (N-1) && grid[row-1][col] && grid[row+1][col] && !grid[row][col-1] && !grid[row][col+1]){ return; }
 	if( 0 < col && col < (N-1) && 0 < row && row < (N-1) && grid[row][col-1] && grid[row][col+1] && !grid[row-1][col] && !grid[row+1][col]){ return; }
 
